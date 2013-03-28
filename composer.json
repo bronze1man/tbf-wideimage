@@ -1,0 +1,7 @@
+{
+    "name":"tbf/wideimage",
+    "type": "library",
+    "autoload":{
+        "classmap":["lib/"]
+    }
+}

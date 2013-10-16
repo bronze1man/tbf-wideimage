@@ -23,13 +23,6 @@
   **/
 	
 	/**
-	 * Thrown when image format isn't supported
-	 * 
-	 * @package Exceptions
-	 */
-	class WideImage_UnsupportedFormatException extends WideImage_Exception {}
-	
-	/**
 	 * Mapper factory
 	 * 
 	 * @package Internals
@@ -62,14 +55,14 @@
 				return self::$mappers[$format];
 			
 			$mapperClassName = 'WideImage_Mapper_' . $format;
-			
+			/*
 			if (!class_exists($mapperClassName, false))
 			{
 				$mapperFileName = WideImage::path() . 'Mapper/' . $format . '.php';
 				if (file_exists($mapperFileName))
 					require_once $mapperFileName;
 			}
-			
+			*/
 			if (class_exists($mapperClassName))
 			{
 				self::$mappers[$format] = new $mapperClassName();

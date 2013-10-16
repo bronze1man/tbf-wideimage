@@ -2,6 +2,8 @@
     "name":"tbf/wideimage",
     "type": "library",
     "autoload":{
-        "classmap":["lib/"]
+        "psr-0":{
+            "WideImage":"lib/"
+        }
     }
 }

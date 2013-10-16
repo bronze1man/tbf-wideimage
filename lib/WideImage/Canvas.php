@@ -23,21 +23,6 @@
   **/
 	
 	/**
-	 * @package Exceptions
-	 */
-	class WideImage_NoFontException extends WideImage_Exception {}
-	
-	/**
-	 * @package Exceptions
-	 */
-	class WideImage_InvalidFontFileException extends WideImage_Exception {}
-	
-	/**
-	 * @package Exceptions
-	 */
-	class WideImage_InvalidCanvasMethodException extends WideImage_Exception {}
-	
-	/**
 	 * @package WideImage
 	 */
 	class WideImage_Canvas

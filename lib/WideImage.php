@@ -21,39 +21,6 @@
     
     * @package WideImage
   **/
-	
-	require_once WideImage::path() . 'Exception.php';
-	
-	require_once WideImage::path() . 'Image.php';
-	require_once WideImage::path() . 'TrueColorImage.php';
-	require_once WideImage::path() . 'PaletteImage.php';
-	
-	require_once WideImage::path() . 'Coordinate.php';
-	require_once WideImage::path() . 'Canvas.php';
-	require_once WideImage::path() . 'MapperFactory.php';
-	require_once WideImage::path() . 'OperationFactory.php';
-	
-	require_once WideImage::path() . 'Font/TTF.php';
-	require_once WideImage::path() . 'Font/GDF.php';
-	require_once WideImage::path() . 'Font/PS.php';
-	
-	/**
-	 * @package Exceptions
-	 */
-	class WideImage_InvalidImageHandleException extends WideImage_Exception {}
-	
-	/**
-	 * @package Exceptions
-	 */
-	class WideImage_InvalidImageSourceException extends WideImage_Exception {}
-	
-	/**
-	 * @package Exceptions
-	 * 
-	 * Class for invalid GD function calls result (for example those that return bool)
-	 */
-	class WideImage_GDFunctionResultException extends WideImage_Exception {}
-	
 	/**
 	 * The gateway class for loading images and core library functions
 	 *

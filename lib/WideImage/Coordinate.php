@@ -22,12 +22,6 @@
 	* @package Internals
   **/
 	
-	
-	/**
-	 * @package Exceptions
-	 */
-	class WideImage_InvalidCoordinateException extends WideImage_Exception {}
-	
 	/**
 	 * A utility class for smart coordinates
 	 *  

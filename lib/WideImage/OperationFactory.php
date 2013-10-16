@@ -19,30 +19,36 @@
     along with WideImage; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-    * @package Internal/Mappers
+	* @package Internals
   **/
 	
-	include_once WideImage::path() . '/vendor/de77/TGA.php';
-	
 	/**
-	 * Mapper support for TGA
+	 * Operation factory
 	 * 
-	 * @package Internal/Mappers
-	 */
-	class WideImage_Mapper_TGA
+	 * @package Internals
+	 **/
+	class WideImage_OperationFactory
 	{
-		function load($uri)
-		{
-			return WideImage_vendor_de77_TGA::imagecreatefromtga($uri);
-		}
+		static protected $cache = array();
 		
-		function loadFromString($data)
+		static function get($operationName)
 		{
-			return WideImage_vendor_de77_TGA::imagecreatefromstring($data);
-		}
-		
-		function save($handle, $uri = null)
-		{
-			throw new WideImage_Exception("Saving to TGA isn't supported.");
+			$lcname = strtolower($operationName);
+			if (!isset(self::$cache[$lcname]))
+			{
+				$opClassName = "WideImage_Operation_" . ucfirst($operationName);
+				if (!class_exists($opClassName))
+				{
+                    /*
+					$fileName = WideImage::path() . 'Operation/' . ucfirst($operationName) . '.php';
+					if (file_exists($fileName))
+						require_once $fileName;
+					elseif (!class_exists($opClassName))
+                    */
+						throw new WideImage_UnknownImageOperationException("Can't load '{$operationName}' operation.");
+				}
+				self::$cache[$lcname] = new $opClassName();
+			}
+			return self::$cache[$lcname];
 		}
 	}

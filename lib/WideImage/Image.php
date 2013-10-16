@@ -23,20 +23,6 @@
   **/
 	
 	/**
-	 * Thrown when an invalid dimension is passed for some operations
-	 * 
-	 * @package Exceptions
-	 */
-	class WideImage_InvalidImageDimensionException extends WideImage_Exception {}
-	
-	/**
-	 * Thrown when an image can't be saved (returns false by the mapper)
-	 * 
-	 * @package Exceptions
-	 */
-	class WideImage_UnknownErrorWhileMappingException extends WideImage_Exception {}
-	
-	/**
 	 * Base class for images
 	 * 
 	 * @package WideImage
